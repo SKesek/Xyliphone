@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
               onPressed: () {
                 playSound(noteNumber);
               },
-              child: Text(''),
+              child: const Text(''),
             )));
   }
 
@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
               buildKey(Colors.teal, 5),
               buildKey(Colors.blue, 6),
               buildKey(Colors.purple, 7),
+              buildKey(Colors.deepPurple, 8)
             ],
           ),
         ),
