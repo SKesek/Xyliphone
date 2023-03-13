@@ -11,16 +11,21 @@ class MyApp extends StatelessWidget {
     player.play('note$soundNumber.wav');
   }
 
-  Expanded buildKey(Color colorButton, int noteNumber) {
+  Expanded buildKey(Color colorButton, int noteNumber, String sound) {
     return Expanded(
-        child: Container(
-            color: colorButton,
-            child: TextButton(
-              onPressed: () {
-                playSound(noteNumber);
-              },
-              child: const Text(''),
-            )));
+      child: Container(
+        color: colorButton,
+        child: TextButton(
+          onPressed: () {
+            playSound(noteNumber);
+          },
+          child: Text(
+            sound,
+            style: const TextStyle(fontSize: 25, color: Colors.white),
+          ),
+        ),
+      ),
+    );
   }
 
   @override
@@ -33,14 +38,14 @@ class MyApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              buildKey(Colors.red, 1),
-              buildKey(Colors.orange, 2),
-              buildKey(Colors.yellow, 3),
-              buildKey(Colors.green, 4),
-              buildKey(Colors.teal, 5),
-              buildKey(Colors.blue, 6),
-              buildKey(Colors.purple, 7),
-              buildKey(Colors.deepPurple, 8)
+              buildKey(Colors.red, 1, 'DO'),
+              buildKey(Colors.orange, 2, 'RE'),
+              buildKey(Colors.yellow, 3, 'MI'),
+              buildKey(Colors.green, 4, 'FA'),
+              buildKey(Colors.teal, 5, 'SOL'),
+              buildKey(Colors.blue, 6, 'LA'),
+              buildKey(Colors.purple, 7, 'SI'),
+              buildKey(Colors.deepPurple, 8, 'DO')
             ],
           ),
         ),
